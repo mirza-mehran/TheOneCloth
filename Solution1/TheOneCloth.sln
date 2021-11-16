@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOneCloth.Services", "TheOneCloth.Services\TheOneCloth.Services.csproj", "{0AE7F18D-C695-4BF5-AA58-9C0DDE71D204}"
+	ProjectSection(ProjectDependencies) = postProject
+		{939B3A52-98CA-473C-93BE-FF78700AF765} = {939B3A52-98CA-473C-93BE-FF78700AF765}
+		{47F198EA-25B1-4D77-B96C-5D11B58D5695} = {47F198EA-25B1-4D77-B96C-5D11B58D5695}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOneCloth.Entities", "TheOneCloth.Entities\TheOneCloth.Entities.csproj", "{939B3A52-98CA-473C-93BE-FF78700AF765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOneCloth.Database", "TheOneCloth.Database\TheOneCloth.Database.csproj", "{47F198EA-25B1-4D77-B96C-5D11B58D5695}"
+	ProjectSection(ProjectDependencies) = postProject
+		{939B3A52-98CA-473C-93BE-FF78700AF765} = {939B3A52-98CA-473C-93BE-FF78700AF765}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOneCloth.Web", "TheOneCloth.Web\TheOneCloth.Web.csproj", "{A551FBBA-5D20-40C2-AEE3-65C5143A1077}"
+	ProjectSection(ProjectDependencies) = postProject
+		{939B3A52-98CA-473C-93BE-FF78700AF765} = {939B3A52-98CA-473C-93BE-FF78700AF765}
+		{0AE7F18D-C695-4BF5-AA58-9C0DDE71D204} = {0AE7F18D-C695-4BF5-AA58-9C0DDE71D204}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AE7F18D-C695-4BF5-AA58-9C0DDE71D204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE7F18D-C695-4BF5-AA58-9C0DDE71D204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE7F18D-C695-4BF5-AA58-9C0DDE71D204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE7F18D-C695-4BF5-AA58-9C0DDE71D204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{939B3A52-98CA-473C-93BE-FF78700AF765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939B3A52-98CA-473C-93BE-FF78700AF765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939B3A52-98CA-473C-93BE-FF78700AF765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939B3A52-98CA-473C-93BE-FF78700AF765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47F198EA-25B1-4D77-B96C-5D11B58D5695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47F198EA-25B1-4D77-B96C-5D11B58D5695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47F198EA-25B1-4D77-B96C-5D11B58D5695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47F198EA-25B1-4D77-B96C-5D11B58D5695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A551FBBA-5D20-40C2-AEE3-65C5143A1077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A551FBBA-5D20-40C2-AEE3-65C5143A1077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A551FBBA-5D20-40C2-AEE3-65C5143A1077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A551FBBA-5D20-40C2-AEE3-65C5143A1077}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
