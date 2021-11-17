@@ -26,6 +26,24 @@ namespace TheOneCloth.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Admincss").Include(
+                       "~/Content/plugins/fontawesome-free/css/all.min.css",
+                         "~/Content/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
+                          "~/Content/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css",
+                            "~/Content/plugins/icheck-bootstrap/icheck-bootstrap.min.css",
+                            "~/Content/AdminStyle/css/adminlte.css"));
+            
+            bundles.Add(new ScriptBundle("~/Content/Adminplugins").Include(
+                             "~/Content/plugins/jquery/jquery.min.js",
+                              "~/Content/plugins/bootstrap/js/bootstrap.bundle.min.js",
+                               "~/Content/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js",
+                                "~/Content/AdminStyle/js/adminlte.js",
+                                 "~/Content/plugins/jquery-mousewheel/jquery.mousewheel.js",
+                                  "~/Content/plugins/raphael/raphael.min.js",
+                                   "~/Content/plugins/jquery-mapael/jquery.mapael.min.js",
+                                    "~/Content/plugins/jquery-mapael/maps/usa_states.min.js"));
+
         }
     }
 }
