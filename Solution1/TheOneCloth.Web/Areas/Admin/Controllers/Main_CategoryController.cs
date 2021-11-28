@@ -13,7 +13,12 @@ namespace TheOneCloth.Web.Areas.Admin.Controllers
 {
     public class Main_CategoryController : Controller
     {
-        // GET: Admin/Main_Category_
+        private ICategoryServices _CategoryServices = null;
+        public Main_CategoryController(ICategoryServices CategoryServices)
+        {
+            _CategoryServices = CategoryServices;
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -21,13 +26,13 @@ namespace TheOneCloth.Web.Areas.Admin.Controllers
 
         public ActionResult ViewAll()
         {
-            return View(CategoryServices.Instance.GetAll_main_Category());
+            return View(_CategoryServices.GetAll_main_Category());
         }
 
         [HttpGet]
         public ActionResult Main_Cat_Edit(int id=0)
         {
-            var cate= CategoryServices.Instance.Main_Cat_Edit_Get_Cat(id);           
+            var cate = _CategoryServices.Main_Cat_Edit_Get_Cat(id);        
             return View(cate);
         }
 
@@ -44,8 +49,8 @@ namespace TheOneCloth.Web.Areas.Admin.Controllers
                     cate.ImageURL = "~/images/category/" + fileName;
                     cate.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/images/category/"), fileName));
                 }
-                CategoryServices.Instance.Main_Cat_Edit_POST_Cat(cate);
-                return Json(new { success = true, html = GlobalClass.RenderRazorViewToString(this, "ViewAll", CategoryServices.Instance.GetAll_main_Category()), message = "Submitted Successfully" }, JsonRequestBehavior.AllowGet);
+               _CategoryServices.Main_Cat_Edit_POST_Cat(cate);
+                return Json(new { success = true, html = GlobalClass.RenderRazorViewToString(this, "ViewAll",_CategoryServices.GetAll_main_Category()), message = "Submitted Successfully" }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
@@ -58,8 +63,8 @@ namespace TheOneCloth.Web.Areas.Admin.Controllers
         {
             try
             {
-                CategoryServices.Instance.Main_Cat_Delete_POST_Cat(id);
-                return Json(new { success = true, html = GlobalClass.RenderRazorViewToString(this, "ViewAll", CategoryServices.Instance.GetAll_main_Category()), message = "Deleted Successfully" }, JsonRequestBehavior.AllowGet);
+                _CategoryServices.Main_Cat_Delete_POST_Cat(id);
+                return Json(new { success = true, html = GlobalClass.RenderRazorViewToString(this, "ViewAll", _CategoryServices.GetAll_main_Category()), message = "Deleted Successfully" }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {

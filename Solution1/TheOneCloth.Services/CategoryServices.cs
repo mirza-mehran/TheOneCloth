@@ -11,24 +11,24 @@ using System.IO;
 
 namespace TheOneCloth.Services
 {
-  public   class CategoryServices
+  public class CategoryServices : ICategoryServices
     {
         #region Singleton Pattern
-        public static CategoryServices Instance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new CategoryServices();
-                return instance;
-            }
-        }
-        private static CategoryServices instance { get; set; }
+        //public static CategoryServices Instance
+        //{
+        //    get
+        //    {
+        //        if (instance == null)
+        //            instance = new CategoryServices();
+        //        return instance;
+        //    }
+        //}
+        //private static CategoryServices instance { get; set; }
 
-        private CategoryServices()
-        {
+        //private CategoryServices()
+        //{
 
-        }
+        //}
         #endregion
 
         public Categories Main_Cat_Edit_Get_Cat(int id)
@@ -38,7 +38,7 @@ namespace TheOneCloth.Services
             {
                 using (var db = new TOContext())
                 {
-                   cate = db.Categoriess.Find(id);
+                    cate = db.Categoriess.Find(id);
                 }
             }
             return cate;
@@ -60,7 +60,6 @@ namespace TheOneCloth.Services
 
             }
         }
-
         public void Main_Cat_Delete_POST_Cat(int id)
         {
             using (TOContext db = new TOContext())
@@ -78,7 +77,7 @@ namespace TheOneCloth.Services
                 db.SaveChanges();
             }
         }
-      public   IEnumerable<Categories> GetAll_main_Category()
+        public IEnumerable<Categories> GetAll_main_Category()
         {
             using (var db = new TOContext())
             {
@@ -112,7 +111,6 @@ namespace TheOneCloth.Services
                return  db.Categoriess.Find(id);
             }
         }
-
         public void UpdateCategory(Categories category)
         {
             using (var db=new TOContext())
@@ -121,7 +119,6 @@ namespace TheOneCloth.Services
                 db.SaveChanges();
             }
         }
-
         public void  Delete(int Id)
         {
             using (var db = new TOContext())
