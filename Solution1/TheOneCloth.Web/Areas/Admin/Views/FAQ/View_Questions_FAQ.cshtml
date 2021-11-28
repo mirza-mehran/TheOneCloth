@@ -1,0 +1,96 @@
+﻿			<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Users</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Users</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid bg-white">
+            <div class="card-header">
+                <h3 class="card-title">View Details</h3>
+            </div>
+            <div class="row col-md-12">
+                <div class="col-md-6 mt-3">
+                    <div class="card">
+                        <!--  <div class="card-header">
+                           <h3 class="card-title">View Details</h3>
+                         </div> -->
+                        <!-- ./card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered table-hover">
+                                <!-- <thead>
+
+                                </thead> -->
+                                <tbody>
+                                    <tr class="expandable-body">
+                                        <th>Category</th>
+                                        <td>Sample category</td>
+                                    </tr>
+                                    <tr class="expandable-body">
+                                        <th>Question</th>
+                                        <td>What are the advantages of buying at auction?</td>
+
+                                    </tr>
+                                    <tr class="expandable-body">
+                                        <th>Answer</th>
+                                        <td>There are many advantages, two of these are: An auction demonstrates free and fair competition enabling the purchaser to buy at a price that is fairly achieved against other known bidders. If you are the successful bidder you know that the vendor cannot withdraw and the property is yours on completion, which usually takes place 28 days after the auction.</td>
+                                    </tr>
+                                    <tr class="expandable-body">
+                                        <th>Status</th>
+                                        <td>Active</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                    <div class="back-list-btn ml-3 mb-5">
+                        <a href="faq_Questions.html" class="btn btn-secondary btn-sm">Back to list</a>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>

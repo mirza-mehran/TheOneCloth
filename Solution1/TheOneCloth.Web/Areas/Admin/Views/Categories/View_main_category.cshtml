@@ -1,0 +1,144 @@
+﻿@model Add_main_CategoryViewModel
+
+@if (Model != null && Model.category != null)
+{
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Categories</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Users</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">View</h3>
+                                <button class="float-right btn btn-success pt-0 pb-0">Add New</button>
+                            </div>
+                            <div class="card-body col-md-6">
+                                <table class="table table-bordered table-striped sub-border">
+                                    <tbody>
+                                        <tr>
+
+                                            <th>Category</th>
+                                            <td>@Model.category.Name</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Description</th>
+                                            <td>@Model.category.Description</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <!-- 	<a href="#" class="btn btn-danger sub-btn">Sub Category</a> -->
+                                <table id="example1" class="table table-bordered table-striped sub-border">
+                                    <thead>
+                                        <tr>
+                                            <th>Sub Catogory</th>
+                                            <th>Editors</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>Electronicos</td>
+                                            <td>
+                                                <a href="Categories___Sub-Category_view_btn.html" class="btn btn-primary btn-sm">View</a>
+                                                <a href="Categories___Sub-Category_edit_btn.html" class="btn btn-info btn-sm">Edit</a>
+                                                <button href="#" class="btn btn-danger btn-sm" id="delete-btn">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>TVs</td>
+                                            <td>
+                                                <a href="Categories___Sub-Category_view_btn.html" class="btn btn-primary btn-sm">View</a>
+                                                <a href="Categories___Sub-Category_edit_btn.html" class="btn btn-info btn-sm">Edit</a>
+                                                <button href="#" class="btn btn-danger btn-sm" id="delete-btn">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>LCD</td>
+                                            <td>
+                                                <a href="Categories___Sub-Category_view_btn.html" class="btn btn-primary btn-sm">View</a>
+                                                <a href="Categories___Sub-Category_edit_btn.html" class="btn btn-info btn-sm">Edit</a>
+                                                <button href="#" class="btn btn-danger btn-sm" id="delete-btn">Delete</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+}
+
+
+<script>
+
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+
+  $("#delete-btn").click(function () {
+  	 swal({
+  	 	title: "Are you sure?",
+  		text: "You Will Not Be Able To Recover This Record!",
+  		icon: "warning",
+  		buttons: true,
+  		dangerMode: true,
+		})
+		.then((willDelete) => {
+			if (willDelete) {
+	    	swal("Poof! Your imaginary file has been deleted!", {
+	      	icon: "success",
+	      	showConfirmButton: false,
+	  		timer: 1000
+	    	});
+	  		} else {
+	    	swal("Your imaginary file is safe!");
+	  		}
+
+		})
+});
+
+</script>

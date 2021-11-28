@@ -1,6 +1,6 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +21,50 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+ul.nav.nav-tabs {
+    margin : 10px 0px;
+}
+
+ul.nav.nav-tabs li:not(.active) a {
+        background-color: #eeeeee;
+        color: grey;
+    }
+
+ul.nav.nav-tabs li a.active {
+    border-top: 3px solid #16a765;
+}
+
+
+    .loaderbody {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    position : absolute;
+    background-color:rgba(128,128,128,0.2);
+    z-index : 2147483647;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position : fixed;
+    top : 45%;
+    left : 40%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

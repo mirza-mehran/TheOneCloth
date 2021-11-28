@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -88,12 +89,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IdentityModels.cs" />
+    <Compile Include="CategoryConfig.cs" />
+    <Compile Include="Migrations\202111181005552_initialized.cs" />
+    <Compile Include="Migrations\202111181005552_initialized.designer.cs">
+      <DependentUpon>202111181005552_initialized.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111182036112_addedEmailInUsers.cs" />
+    <Compile Include="Migrations\202111182036112_addedEmailInUsers.designer.cs">
+      <DependentUpon>202111182036112_addedEmailInUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111211935175_AddCategoryDB_With_FluentApi.cs" />
+    <Compile Include="Migrations\202111211935175_AddCategoryDB_With_FluentApi.designer.cs">
+      <DependentUpon>202111211935175_AddCategoryDB_With_FluentApi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TOContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheOneCloth.Entities\TheOneCloth.Entities.csproj">
+      <Project>{939B3A52-98CA-473C-93BE-FF78700AF765}</Project>
+      <Name>TheOneCloth.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202111181005552_initialized.resx">
+      <DependentUpon>202111181005552_initialized.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111182036112_addedEmailInUsers.resx">
+      <DependentUpon>202111182036112_addedEmailInUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111211935175_AddCategoryDB_With_FluentApi.resx">
+      <DependentUpon>202111211935175_AddCategoryDB_With_FluentApi.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

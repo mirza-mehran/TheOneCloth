@@ -1,0 +1,102 @@
+﻿			<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Faq Questions</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Users</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid bg-white">
+            <div class="card-header">
+                <h3 class="card-title">Add New</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="row col-md-12">
+                <!-- left column -->
+                <div class="col-md-6">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+
+                        <!-- form start -->
+                        <form>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Faq Category <sup class="text-red h6">*</sup></label>
+                                    <select class="form-control select2" style="width: 100%;">
+                                        <option selected="selected">Select Category</option>
+                                        <option>Punjab</option>
+                                        <option>Sindh</option>
+                                        <option>Balochistan</option>
+                                        <option>Azad Kashmir</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Question</label>
+                                    <textarea class="textarea-faq-question" rows="4" cols="50" name="comment" form="usrform" id="exampleInputAddress1">What are the advantages of buying at auction?</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Answer</label>
+                                    <textarea class="textarea-faq-question" rows="8" cols="50" name="comment" form="usrform" id="exampleInputAddress1">
+                                        There are many advantages, two of these are:An auction demonstrates free and fair competition enabling the purchaser to buy at a price that is fairly achieved against other known bidders.If you are the successful bidder you know that the vendor cannot withdraw and the property is yours on completion, which usually takes place 28 days after the auction.
+
+
+
+                                    </textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Status <sup class="text-red h6">*</sup></label>
+                                    <select class="form-control select2" style="width: 100%;">
+                                        <option selected="selected">Select</option>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                    </div>
+
+
+                    <!-- /.card-body -->
+
+                    <div class="float-right mr-4">
+                        <a type="submit" class="btn btn-primary mb-5" href="faq_Questions.html">Save</a>
+                    </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+        <!-- /.row -->
+
+
+
+				</section><!-- /.container-fluid -->
+<!-- /.content -->
+<!-- /.content-wrapper -->
+			</div>
+
+<script>
+  $(function () {
+    // Summernote
+    $('#summernote').summernote()
+
+    // CodeMirror
+    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+      mode: "htmlmixed",
+      theme: "monokai"
+    });
+  })
+</script>

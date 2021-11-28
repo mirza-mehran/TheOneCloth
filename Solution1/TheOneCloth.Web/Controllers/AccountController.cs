@@ -9,6 +9,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using TheOneCloth.Web.Models;
+using TheOneCloth.Services;
+using TheOneCloth.Entities;
+using System.Web.Security;
 
 namespace TheOneCloth.Web.Controllers
 {
@@ -52,6 +55,7 @@ namespace TheOneCloth.Web.Controllers
             }
         }
 
+     
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -66,28 +70,35 @@ namespace TheOneCloth.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<JsonResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return Json(false);
             }
-
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
+            
+            Users user = AccountServices.Instance.Login(model.UserName,model.Password);
+            if (user != null)
             {
-                case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+                FormsAuthentication.SetAuthCookie(user.UserName,model.RememberMe);
+                FormsAuthentication.SetAuthCookie(Convert.ToString(user.UserID), model.RememberMe);
+
+                var authTicket = new FormsAuthenticationTicket(1,user.UserName,DateTime.Now.Date,DateTime.Now.AddMonths(40),false,user.Roles);
+
+                string encrytedTicket = FormsAuthentication.Encrypt(authTicket);
+
+                var authCookies = new HttpCookie(FormsAuthentication.FormsCookieName, encrytedTicket);
+
+                HttpContext.Response.Cookies.Add(authCookies);
+
+                //  return RedirectToAction("Index","Home");
+                return Json(true);
+            }
+            else
+            {
+                ModelState.AddModelError("", "Invalid login attempt.");
+                // return View(model);
+                return Json(false);
             }
         }
 
@@ -151,23 +162,10 @@ namespace TheOneCloth.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                    return RedirectToAction("Index", "Home");
-                }
-                AddErrors(result);
+                AccountServices.Instance.Register(model.UserName,model.Email,model.Password);
+                ModelState.Clear();
+                return  RedirectToAction("Login");
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -391,7 +389,8 @@ namespace TheOneCloth.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            FormsAuthentication.SignOut();
+          //AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }
 

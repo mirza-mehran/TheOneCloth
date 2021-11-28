@@ -1,0 +1,73 @@
+﻿@model IEnumerable<TheOneCloth.Entities.Categories>
+
+@{
+    ViewBag.Title = "ViewAll";
+    Layout = null;
+    int num = 1;
+
+}
+
+<div class="">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="categoryTable" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>S.no.</th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Name)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Status)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.IsFeatured)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ImageURL)
+                                        </th>
+                                        <th>Editors</th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <th>@num</th>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Name)
+                                            </td>
+                                      
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Status)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.IsFeatured)
+                                            </td>
+                                            <td>
+                                                <div class="thumb">
+                                                    @*<img src="@Html.DisplayFor(modelItem => item.ImageURL)" alt="User Avatar" class="img-size-64 img-circle mr-3">*@
+                                                    <img src="@Url.Content(item.ImageURL)"   alt="Category Img" class="img-size-64 img-circle mr-3" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-primary btn-sm" onclick="Edit('@Url.Action("Main_Cat_Edit", "Main_Category", new { id=@item.ID})')"><i class="fa fa-pencil fa-lg"></i></a>
+                                                <a class="btn btn-danger btn-sm" onclick="Delete('@Url.Action("Delete", "Main_Category", new { id=@item.ID})')"><i class="fa fa-trash fa-lg"></i></a>
+                                            </td>
+                                        </tr>
+                                        num++;
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

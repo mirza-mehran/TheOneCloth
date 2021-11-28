@@ -1,0 +1,150 @@
+﻿@model Add_main_CategoryViewModel
+
+@{
+    Layout = null;
+    var imageURL = !string.IsNullOrEmpty(Model.category.ImageURL) ? Model.category.ImageURL : "/images/default-placeholder.png";
+    var truechecked = Model.category.IsFeatured ? "checked" : string.Empty;
+    var falsechecked = !Model.category.IsFeatured ? "checked" : string.Empty;
+}
+
+<div class="">
+  
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid bg-white">
+            <div class="card-header">
+                <h3 class="card-title">Edit</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="row col-md-12">
+                <!-- left column -->
+                <div class="col-md-6">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <!-- form start -->
+                        <form id="updateCategory">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <input type="hidden" value="@Model.category.ID"/>
+                                    <label for="exampleInputEmail1">Category<sup class="text-red h6">*</sup></label>
+                                    <input type="text" class="form-control" value="@Model.category.Name"  name="name" placeholder="Electronic">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Description</label>
+                                    <textarea class="textarea-faq-question" rows="8" cols="50" name="Description">@Model.category.Description</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Status <sup class="text-red h6">*</sup></label>
+                                    <select class="form-control select2" name="status"  style="width: 100%;">
+                                        @if (Model.category.IsFeatured == true)
+                                        {
+                                            <option selected="selected">@Model.category.Status</option>
+                                            <option>Inactive</option>
+                                        }
+                                        else if (Model.category.IsFeatured == false)
+                                        {
+                                            <option selected="selected">@Model.category.Status</option>
+                                            <option>Active</option>
+                                        }
+                                        else
+                                        {
+                                            <option selected="selected">Select</option>
+                                            <option>Active</option>
+                                            <option>Inactive</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>IsFeatured <sup class="text-red h6">*</sup></label>
+                                    <input type="radio" name="IsFeatured" value="true" @truechecked/> True
+                                    <input type="radio" name="IsFeatured" value="False" @falsechecked  /> False
+                                </div>
+                                <div class="form-group">
+                                    <label>Image <sup class="text-red h6">*</sup></label>
+                                    <input type="hidden" id="ImageURL" name="ImageURL" value="@Model.category.ImageURL"/>
+                                    <input type="file" id="changeimg" name="image" />
+                                </div>
+                                <div class="thumb">
+                                    <img class="w-25 h-25" id="imageshow" src="@imageURL" />
+                                </div>
+                                <div class="float-right mr-4">
+                                    <button class="btn btn-primary mb-5" id="updatebtn" type="button">Update</button>
+                                    <button class="btn btn-primary mb-5" id="cancelbtn" type="button">Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card-body -->
+                   
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+        <!-- /.row -->
+				  
+	</section><!-- /.container-fluid -->
+<!-- /.content -->
+<!-- /.content-wrapper -->
+</div>
+
+<script>
+
+    $("#updatebtn").click(function () {
+
+        $.ajax({
+            type: 'POST',
+            url : '@Url.Action("Edit_main_category", "Categories")',
+            data: $("#updateCategory").serialize(),
+            success: function (resp) {
+                $(location).attr('href', '@Url.Action("main_category", "Categories")')
+            },
+            error: function (err) {
+                alert('FAIL');
+            }
+
+        })
+
+    })
+
+
+    $("#cancelbtn").click(function () {
+        $(location).attr('href','@Url.Action("main_category", "Categories")')
+    })
+
+
+
+    $("#changeimg").change(function () {
+
+        var element = this;
+        var formData = new FormData();
+        var totalFiles = element.files.length;
+
+        for (var i = 0; i < totalFiles; i++) {
+            var file = element.files[i];
+            formData.append("Photo", file);
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("UploadImage", "Shared")',
+            dataType: 'json',
+            data: formData,
+            contentType: false,
+            processData: false
+        }).done(function (response) {
+
+            console.log(response);
+
+            if (response.Success) {
+                $("#ImageURL").val(response.ImageURL);
+                $("#imageshow").attr("src", response.ImageURL);
+            }
+
+        }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("FAIL");
+        })
+
+    })
+
+
+</script>

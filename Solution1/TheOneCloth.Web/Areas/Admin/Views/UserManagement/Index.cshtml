@@ -1,0 +1,385 @@
+﻿			<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Users</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Users</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">List</h3>
+                            <a class="float-right btn btn-success pt-0 pb-0" href="@Url.Action("Add_User", "UserManagement")">Add New</a>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>S.no.</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Images</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>Editor</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Mirza</td>
+                                        <td>Mirza12@gfd.com</td>
+                                        <td><img src="../../images/m.jpeg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Bidder</td>
+                                        <td><button href="#" class="btn btn-danger btn-sm" id="block-btn">Block</button></td>
+                                        <td>
+                                            <a href="@Url.Action("View_User", "UserManagement")" class="btn btn-primary btn-sm">View</a>
+                                            <a href="@Url.Action("Edit_User", "UserManagement")" class="btn btn-info btn-sm">Edit</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>ALi </td>
+                                        <td>ali@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Seller</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>ahmad</td>
+                                        <td>ahmad@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Bidder</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Haroon</td>
+                                        <td>haroon@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Bidder</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Awais</td>
+                                        <td>awais@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Seller</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Sani</td>
+                                        <td>sami@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Bidder</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>Mehran</td>
+                                        <td>mehran@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>seller</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Mozzam</td>
+                                        <td>mozzam@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>bidder</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>Shan Ali</td>
+                                        <td>shanali@gfd.com</td>
+                                        <td><img src="....//dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Admin</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>fahad</td>
+                                        <td>fahad@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Bidder</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>Basit</td>
+                                        <td>basit@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Seller</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>Usama</td>
+                                        <td>usama@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Bidder</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>Farhan</td>
+                                        <td>farhan@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Seller</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>umer</td>
+                                        <td>umer@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Bidder</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>Danish</td>
+                                        <td>danish@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Bidder</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>Sharjeel</td>
+                                        <td>sharjeel@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Bidder</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>Huzaifa</td>
+                                        <td>huzaifa@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Seller</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td>Talha</td>
+                                        <td>talha@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Bidder</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td>Usman</td>
+                                        <td>usman@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Seller</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td>Noman</td>
+                                        <td>noman@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Bidder</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>21</td>
+                                        <td>Majid</td>
+                                        <td>majid@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Seller</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>22</td>
+                                        <td>Ahsan</td>
+                                        <td>ahsan@gfd.com</td>
+                                        <td><img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-30 img-circle mr-3"></td>
+                                        <td>Bidder</td>
+                                        <td><button class="btn btn-danger btn-sm">Block</button></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <!-- <tfoot>
+                                <tr>
+                                  <th>Rendering engine</th>
+                                  <th>Browser</th>
+                                  <th>Platform(s)</th>
+                                  <th>Engine version</th>
+                                  <th>CSS grade</th>
+                                </tr>
+                                </tfoot> -->
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+
+  $("#block-btn").click(function () {
+  	 swal({
+  	 	position: 'center',
+    	icon: 'success',
+	  	title: 'Success',
+	 	text: 'User Account Status Updated Successfully cannot Send Email To User, Please Check Your Service Settings',
+	  	showConfirmButton: false,
+	  	timer: 1000
+	  });
+});
+
+var white = false
+var bgcolor;
+$(document).ready(function () {
+    $("td").on('click', '#block-btn', function() {
+    	 if (white = !white) {
+            bgcolor = $(this).css('backgroundColor');
+            $(this).css("background-color", "#138496");
+            $(this).css("border", "1px solid transparent");
+            $(this).html("Unblock");
+        } else {
+            $(this).css("background-color", bgcolor);
+            $(this).html("Block");
+            $(this).css("border", "1px solid transparent");
+        }
+    });
+});
+
+
+
+</script>
+

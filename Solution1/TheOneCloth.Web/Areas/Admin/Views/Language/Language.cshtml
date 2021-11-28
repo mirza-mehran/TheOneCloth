@@ -1,0 +1,210 @@
+﻿
+			<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Language</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Users</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">List</h3>
+                            <a class="float-right btn btn-success pt-0 pb-0" href="@Url.Action("Add_Language", "Language")">Add New</a>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>S.no.</th>
+                                        <th>Language</th>
+                                        <th>Code</th>
+                                        <th>Is Rtl</th>
+                                        <th>Default Language</th>
+                                        <th>Editor</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Telugu</td>
+                                        <td>TE</td>
+                                        <td><i class="fas fa-check text-success"></i></td>
+                                        <td><button class="btn btn-primary btn-sm" id="default-btn">Set Default</button></td>
+                                        <td>
+                                            <a href="@Url.Action("Update_Strings_Language", "Language")" class="btn btn-primary btn-sm">Update Strings</a>
+                                            <a href="@Url.Action("Edit_Language", "Language")" class="btn btn-info btn-sm">Edit</a>
+                                            <button href="#" class="btn btn-danger btn-sm" id="delete-btn">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Arabic</td>
+                                        <td>AR</td>
+                                        <td><i class="fas fa-times text-danger"></i></td>
+                                        <td><button class="btn btn-primary btn-sm">Set Default</button></td>
+                                        <td>
+                                            <a href="Language_update-string_btn.html" class="btn btn-primary btn-sm">Update Strings</a>
+                                            <a href="Language_edit_btn.html" class="btn btn-info btn-sm">Edit</a>
+                                            <button href="#" class="btn btn-danger btn-sm" id="delete-btn">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Tamil</td>
+                                        <td>TA</td>
+                                        <td><i class="fas fa-times text-danger"></i></td>
+                                        <td><button class="btn btn-primary btn-sm">Set Default</button></td>
+                                        <td>
+                                            <a href="View_btn.html" class="btn btn-primary btn-sm">Update Strings</a>
+                                            <a href="Edit_btn_Faq.html" class="btn btn-info btn-sm">Edit</a>
+                                            <button href="#" class="btn btn-danger btn-sm" id="delete-btn">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Urdu</td>
+                                        <td>UR</td>
+                                        <td><i class="fas fa-check text-success"></i></i></td>
+                                        <td><button class="btn btn-primary btn-sm">Set Default</button></td>
+                                        <td>
+                                            <a href="View_btn.html" class="btn btn-primary btn-sm">Update Strings</a>
+                                            <a href="Edit_btn_Faq.html" class="btn btn-info btn-sm">Edit</a>
+                                            <button href="#" class="btn btn-danger btn-sm" id="delete-btn">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>English</td>
+                                        <td>EN</td>
+                                        <td><i class="fas fa-check text-success"></i></td>
+                                        <td><button class="btn btn-primary btn-sm">Set Default</button></td>
+                                        <td>
+                                            <a href="View_btn.html" class="btn btn-primary btn-sm">Update Strings</a>
+                                            <a href="Edit_btn_Faq.html" class="btn btn-info btn-sm">Edit</a>
+                                            <button href="#" class="btn btn-danger btn-sm" id="delete-btn">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Hindi</td>
+                                        <td>HI</td>
+                                        <td><i class="fas fa-times text-danger"></i></td>
+                                        <td><button class="btn btn-primary btn-sm">Set Default</button></td>
+                                        <td>
+                                            <a href="View_btn.html" class="btn btn-primary btn-sm">Update Strings</a>
+                                            <a href="Edit_btn_Faq.html" class="btn btn-info btn-sm">Edit</a>
+                                            <button href="#" class="btn btn-danger btn-sm" id="delete-btn">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>German</td>
+                                        <td>DE</td>
+                                        <td><i class="fas fa-times text-danger"></i></td>
+                                        <td><button class="btn btn-primary btn-sm">Set Default</button></td>
+                                        <td>
+                                            <a href="View_btn.html" class="btn btn-primary btn-sm">Update Strings</a>
+                                            <a href="Edit_btn_Faq.html" class="btn btn-info btn-sm">Edit</a>
+                                            <button href="#" class="btn btn-danger btn-sm" id="delete-btn">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Indonesian</td>
+                                        <td>ID</td>
+                                        <td><i class="fas fa-times text-danger"></i></td>
+                                        <td><button class="btn btn-primary btn-sm">Set Default</button></td>
+                                        <td>
+                                            <a href="View_btn.html" class="btn btn-primary btn-sm">Update Strings</a>
+                                            <a href="Edit_btn_Faq.html" class="btn btn-info btn-sm">Edit</a>
+                                            <button href="#" class="btn btn-danger btn-sm" id="delete-btn">Delete</button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+
+  $("#delete-btn").click(function () {
+  	 swal({
+  	 	title: "Are you sure?",
+  		text: "You Will Not Be Able To Recover This Record!",
+  		icon: "warning",
+  		buttons: true,
+  		dangerMode: true,
+		})
+		.then((willDelete) => {
+			if (willDelete) {
+	    	swal("Poof! Your imaginary file has been deleted!", {
+	      	icon: "success",
+	      	showConfirmButton: false,
+	  		timer: 1000
+	    	});
+	  		} else {
+	    	swal("Your imaginary file is safe!");
+	  		}
+
+		})
+});
+
+   $("#default-btn").click(function () {
+  	 swal({
+  	 	position: 'center',
+    	icon: 'success',
+	  	title: 'Success',
+	 	text: 'User Account Status Updated Successfully cannot Send Email To User, Please Check Your Service Settings',
+	  	showConfirmButton: false,
+	  	timer: 1000
+	  });
+});
+
+
+</script>

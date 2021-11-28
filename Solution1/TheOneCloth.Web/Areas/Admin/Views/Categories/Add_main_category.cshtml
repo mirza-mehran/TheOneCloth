@@ -1,0 +1,110 @@
+﻿@model Add_main_CategoryViewModel
+
+@{
+  
+    Layout = null;
+    var imageURL = "/images/default-placeholder.png";
+}
+
+@*@using (Html.BeginForm("Add_main_category", "Categories",FormMethod.Post,new {enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()*@
+    <div class="">
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid bg-white">
+                <!-- /.card-header -->
+                <div class="row col-md-12">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <!-- form start -->
+                            <form id="createCategory">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                    
+                                        <label for="exampleInputEmail1">Category<sup class="text-red h6">*</sup></label>
+                                        <input type="text" class="form-control" name="name" placeholder="Electronic">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Description</label>
+                                        <textarea class="textarea-faq-question" rows="8" cols="50" name="Description"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Status <sup class="text-red h6">*</sup></label>
+                                        <select class="form-control select2" name="status" style="width: 100%;">
+                                            <option selected="selected">Select</option>
+                                            <option>Active</option>
+                                            <option>Inactive</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>IsFeatured <sup class="text-red h6">*</sup></label>
+                                        <input type="radio" name="IsFeatured" value="true" checked /> True
+                                        <input type="radio" name="IsFeatured" value="False" /> False
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Image <sup class="text-red h6">*</sup></label>
+                                        <input type="hidden" id="ImageURL" name="ImageURL" />
+                                        <input type="file" id="changeimg" name="image" />
+                                    </div>
+                                    <div class="thumb">
+                                        <img class="w-25 h-25" id="imageshow" src="@imageURL" />
+                                    </div>
+                                    <div class="float-right mr-4">
+                                        <button class="btn btn-primary mb-5" id="savebtn" type="button" data-request-url="@Url.Action("Add_main_category", "Categories")">Save</button>
+                                        <button class="btn btn-primary mb-5" id="cancelbtn" type="button">Cancel</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+            <!-- /.row -->
+        </section><!-- /.container-fluid -->
+        <!-- /.content -->
+        <!-- /.content-wrapper -->
+    </div>
+@*}*@
+
+<script>
+    @*$("#savebtn").click(function () {
+
+        $.ajax({
+            type: 'POST',
+            url:'@Url.Action("Add_main_category", "Categories")',
+            data: $("#createCategory").serialize()
+        }).done(function (response) {
+
+            $("#createCategory").each(function () {
+                this.reset();
+                $("#imageshow").attr("src", " ");
+            });
+
+        }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+            swal({
+                title: "Warning",
+                text: "Please enter all required fields",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            });
+        });
+
+    })*@
+
+    $("#cancelbtn").click(function () {
+        $("#createCategory").each(function () {
+            this.reset();
+            $("#imageshow").attr("src", " ");
+        });
+    })
+
+    
+
+</script>

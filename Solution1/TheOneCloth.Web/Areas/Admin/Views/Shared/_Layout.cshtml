@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheOneCloth - Admin Panel</title>
     @Styles.Render("~/Content/Admincss")
-   
+    @Styles.Render("~/Content/site.css")
+    @Scripts.Render("~/Content/Adminplugins")
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="wrapper">
@@ -37,7 +39,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                                <img src="" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Brad Diesel
@@ -53,7 +55,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                                <img src="" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         John Pierce
@@ -69,7 +71,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                                <img src="" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Nora Silvester
@@ -169,7 +171,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/Users_Managment/datatable.html" class="nav-link">
+                            <a href="@Url.Action("Index", "UserManagement")" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     User Management
@@ -187,13 +189,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/Faq_Management/Categories/Faq_Catogories.html" class="nav-link">
+                                    <a href="@Url.Action("Category_FAQ","FAQ")" class="nav-link">
                                         <i class="fas fa-briefcase nav-icon"></i>
                                         <p>Categories</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/Faq_Management/Faq_Questions/faq_Questions.html" class="nav-link">
+                                    <a href="@Url.Action("Questions_FAQ","FAQ")" class="nav-link">
                                         <i class="fas fa-question nav-icon"></i>
                                         <p>Questions</p>
                                     </a>
@@ -210,13 +212,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/Categories/categories_main/Categories.html" class="nav-link">
+                                    <a href="@Url.Action("Index", "Categories")" class="nav-link">
                                         <i class="fas fa-tags nav-icon"></i>
                                         <p>Category</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/Categories/Sub_Category/Sub_category.html" class="nav-link">
+                                    <a href="@Url.Action("sub_category", "Categories")" class="nav-link">
                                         <i class="far fa-list-alt nav-icon"></i>
                                         <p>Sub Categories</p>
                                     </a>
@@ -233,19 +235,19 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/Location_Master/Countries/countries.html" class="nav-link">
+                                    <a href="@Url.Action("Countries", "Location_Master")" class="nav-link">
                                         <i class="far fa-flag nav-icon"></i>
                                         <p>Countries</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/Location_Master/States/States.html" class="nav-link">
+                                    <a href="@Url.Action("States", "Location_Master")" class="nav-link">
                                         <i class="fas fa-map-marker-alt nav-icon"></i>
                                         <p>States</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/Location_Master/Cities/Cities.html" class="nav-link">
+                                    <a href="@Url.Action("Cities", "Location_Master")" class="nav-link">
                                         <i class="fas fa-city nav-icon"></i>
                                         <p>Cities</p>
                                     </a>
@@ -389,8 +391,14 @@
     <div>
         @RenderBody()
     </div>
+    <div class="loaderbody" id="loaderbody">
+        <div class="loader"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     @Scripts.Render("~/Content/Adminplugins")
     @RenderSection("scripts", required: false)
+    <script src="~/Areas/Admin/Scripts/MainCategoryScript.js"></script>
+    <script src="~/Scripts/notify.min.js"></script>
 </body>
 </html>
