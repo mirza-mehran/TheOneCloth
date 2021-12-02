@@ -8,6 +8,7 @@
     @Styles.Render("~/Content/site.css")
     @Scripts.Render("~/Content/Adminplugins")
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    
 </head>
 <body>
     <div class="wrapper">
@@ -212,13 +213,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="@Url.Action("Index", "Categories")" class="nav-link">
+                                    <a href="@Url.Action("Index", "Main_Category")" class="nav-link">
                                         <i class="fas fa-tags nav-icon"></i>
                                         <p>Category</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="@Url.Action("sub_category", "Categories")" class="nav-link">
+                                    <a href="@Url.Action("Index", "Sub_Categories")" class="nav-link">
                                         <i class="far fa-list-alt nav-icon"></i>
                                         <p>Sub Categories</p>
                                     </a>
@@ -398,6 +399,7 @@
 
     @Scripts.Render("~/Content/Adminplugins")
     @RenderSection("scripts", required: false)
+    <script src="~/Areas/Admin/Scripts/SubCategoryScript.js"></script>
     <script src="~/Areas/Admin/Scripts/MainCategoryScript.js"></script>
     <script src="~/Scripts/notify.min.js"></script>
 </body>

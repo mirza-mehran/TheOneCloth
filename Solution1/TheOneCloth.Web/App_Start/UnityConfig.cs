@@ -18,6 +18,8 @@ namespace TheOneCloth.Web
             // it is NOT necessary to register your controllers
           
             container.RegisterType<ICategoryServices, CategoryServices>();
+            container.RegisterType<ISub_CategoryServices, Sub_CategoryServices>();
+
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

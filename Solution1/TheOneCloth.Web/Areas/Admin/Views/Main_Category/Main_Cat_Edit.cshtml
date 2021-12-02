@@ -6,7 +6,7 @@
     
 }
 
-@using (Html.BeginForm("Main_Cat_Edit", "Main_Category",FormMethod.Post, new { enctype = "multipart/form-data", onSubmit = "return jQueryAjaxPost(this);", data_restUrl=Url.Action("Main_Cat_Edit", "Main_Category", new {id=0 }) }))
+@using (Html.BeginForm("Main_Cat_Edit", "Main_Category",FormMethod.Post, new { enctype = "multipart/form-data", onSubmit = "return jQueryAjaxPost(this);", data_restUrl = Url.Action("Main_Cat_Edit", "Main_Category", new {id=0 }) }))
 {
     <div class="row">
         @Html.AntiForgeryToken()

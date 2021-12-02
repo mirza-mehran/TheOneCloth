@@ -7,13 +7,13 @@ namespace TheOneCloth.Database.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class initialized : IMigrationMetadata
+    public sealed partial class InitializationDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialized));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitializationDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "202111181005552_initialized"; }
+            get { return "202111291158029_InitializationDB"; }
         }
         
         string IMigrationMetadata.Source

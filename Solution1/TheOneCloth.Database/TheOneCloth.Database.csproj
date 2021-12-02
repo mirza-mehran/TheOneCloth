@@ -90,17 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryConfig.cs" />
-    <Compile Include="Migrations\202111181005552_initialized.cs" />
-    <Compile Include="Migrations\202111181005552_initialized.designer.cs">
-      <DependentUpon>202111181005552_initialized.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202111182036112_addedEmailInUsers.cs" />
-    <Compile Include="Migrations\202111182036112_addedEmailInUsers.designer.cs">
-      <DependentUpon>202111182036112_addedEmailInUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202111211935175_AddCategoryDB_With_FluentApi.cs" />
-    <Compile Include="Migrations\202111211935175_AddCategoryDB_With_FluentApi.designer.cs">
-      <DependentUpon>202111211935175_AddCategoryDB_With_FluentApi.cs</DependentUpon>
+    <Compile Include="Migrations\202111291158029_InitializationDB.cs" />
+    <Compile Include="Migrations\202111291158029_InitializationDB.designer.cs">
+      <DependentUpon>202111291158029_InitializationDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,14 +109,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202111181005552_initialized.resx">
-      <DependentUpon>202111181005552_initialized.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202111182036112_addedEmailInUsers.resx">
-      <DependentUpon>202111182036112_addedEmailInUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202111211935175_AddCategoryDB_With_FluentApi.resx">
-      <DependentUpon>202111211935175_AddCategoryDB_With_FluentApi.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202111291158029_InitializationDB.resx">
+      <DependentUpon>202111291158029_InitializationDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

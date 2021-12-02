@@ -18,8 +18,8 @@ namespace TheOneCloth.Entities
         public string  ImageURL { get; set; }
 
         [NotMapped]
-        public HttpPostedFileBase ImageUpload { get; set; } 
-        
+        public HttpPostedFileBase ImageUpload { get; set; }
+
         public Categories()
         {
             ImageURL = "~/images/default.png";

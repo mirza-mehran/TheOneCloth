@@ -57,7 +57,6 @@ namespace TheOneCloth.Services
                     db.Entry(cate).State = EntityState.Modified;
                     db.SaveChanges();
                 }
-
             }
         }
         public void Main_Cat_Delete_POST_Cat(int id)

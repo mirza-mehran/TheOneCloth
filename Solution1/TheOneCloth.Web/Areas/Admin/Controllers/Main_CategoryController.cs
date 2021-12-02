@@ -18,7 +18,6 @@ namespace TheOneCloth.Web.Areas.Admin.Controllers
         {
             _CategoryServices = CategoryServices;
         }
-
         public ActionResult Index()
         {
             return View();

@@ -29,8 +29,6 @@ $("#changeimg").change(function () {
         processData: false
     }).done(function (response) {
 
-        console.log(response);
-
         if (response.Success) {
             $("#ImageURL").val(response.ImageURL);
             $("#imageshow").attr("src", response.ImageURL);
@@ -79,7 +77,7 @@ $("#savebtn").click(function () {
 function jQueryAjaxPost(form) {
     $.validator.unobtrusive.parse(form);
     if ($(form).valid()) {
-        var ajaxConfig = {
+        var ajaxConfig = {                                                  
             type: 'POST',
             url: form.action,
             data: new FormData(form),
@@ -120,6 +118,7 @@ function refreshAddNewTab(resetUrl, showViewTab) {
 }
 
 function Edit(url) {
+    debugger;
     $.ajax({
         type: 'GET',
         url: url,
@@ -128,7 +127,6 @@ function Edit(url) {
             $('ul.nav.nav-tabs a:eq(1)').html('Edit');
             $('ul.nav.nav-tabs a:eq(1)').tab('show');
         }
-
     });
 }
 

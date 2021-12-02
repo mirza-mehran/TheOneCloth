@@ -20,7 +20,7 @@
                                     <tr>
                                         <th>S.no.</th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.Name)
+                                            @Html.DisplayName("Category")
                                         </th>
                                         <th>
                                             @Html.DisplayNameFor(model => model.Status)
@@ -51,7 +51,6 @@
                                             </td>
                                             <td>
                                                 <div class="thumb">
-                                                    @*<img src="@Html.DisplayFor(modelItem => item.ImageURL)" alt="User Avatar" class="img-size-64 img-circle mr-3">*@
                                                     <img src="@Url.Content(item.ImageURL)"   alt="Category Img" class="img-size-64 img-circle mr-3" />
                                                 </div>
                                             </td>
@@ -65,7 +64,7 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>

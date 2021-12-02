@@ -57,7 +57,9 @@
     <Compile Include="AccountServices.cs" />
     <Compile Include="CategoryServices.cs" />
     <Compile Include="ICategoryServices.cs" />
+    <Compile Include="ISub_CategoryServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sub_CategoryServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TheOneCloth.Database\TheOneCloth.Database.csproj">
