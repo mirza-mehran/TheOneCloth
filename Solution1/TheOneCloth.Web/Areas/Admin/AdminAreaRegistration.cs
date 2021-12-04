@@ -14,6 +14,11 @@ namespace TheOneCloth.Web.Areas.Admin
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
+            context.MapRoute(
+                name:"countries",
+                url:"country",
+                defaults: new { Controller = "Location_Master", action = "Countries" }
+                );
 
             context.MapRoute(
                 name:"sub_category",

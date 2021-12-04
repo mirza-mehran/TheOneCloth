@@ -396,11 +396,13 @@
         <div class="loader"></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-
+  
     @Scripts.Render("~/Content/Adminplugins")
     @RenderSection("scripts", required: false)
+
     <script src="~/Areas/Admin/Scripts/SubCategoryScript.js"></script>
     <script src="~/Areas/Admin/Scripts/MainCategoryScript.js"></script>
     <script src="~/Scripts/notify.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 </body>
 </html>

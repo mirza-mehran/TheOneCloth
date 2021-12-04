@@ -2494,8 +2494,6 @@
     <Content Include="Areas\Admin\Views\FAQ\Add_Questions_FAQ.cshtml" />
     <Content Include="Areas\Admin\Views\FAQ\View_Questions_FAQ.cshtml" />
     <Content Include="Areas\Admin\Views\FAQ\Edit_Questions_FAQ.cshtml" />
-    <Content Include="Areas\Admin\Views\Location_Master\Countries.cshtml" />
-    <Content Include="Areas\Admin\Views\Location_Master\Add_Countries.cshtml" />
     <Content Include="Areas\Admin\Views\Location_Master\View_Countries.cshtml" />
     <Content Include="Areas\Admin\Views\Location_Master\Edit_Countries.cshtml" />
     <Content Include="Areas\Admin\Views\Location_Master\Cities.cshtml" />
@@ -2511,7 +2509,6 @@
     <Content Include="Areas\Admin\Views\Language\Update_Strings_Language.cshtml" />
     <Content Include="Areas\Admin\Views\Language\Edit_Language.cshtml" />
     <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_List_main_category.cshtml" />
     <Content Include="Areas\Admin\Views\Main_Category\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Main_Category\ViewAll.cshtml" />
     <Content Include="Areas\Admin\Views\Main_Category\Main_Cat_Edit.cshtml" />
@@ -2519,11 +2516,17 @@
     <Content Include="Areas\Admin\Views\Sub_Categories\ViewAll.cshtml" />
     <Content Include="Areas\Admin\Views\Sub_Categories\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Sub_Categories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Location_Master\Add_Countries.cshtml" />
+    <Content Include="Areas\Admin\Views\Location_Master\ViewAll.cshtml" />
+    <Content Include="Areas\Admin\Views\Location_Master\Countries.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_TimeOut.cshtml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Scripts\jquery-2.2.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />

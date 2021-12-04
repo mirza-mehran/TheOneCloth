@@ -1,79 +1,57 @@
-﻿
-			<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Countries</h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Users</li>
-                    </ol>
-                </div>
-            </div>
-        </div><!-- /.container-fluid -->
-    </section>
+﻿@model Countries
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid bg-white">
-            <div class="card-header">
-                <h3 class="card-title">Edit</h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="row col-md-12">
-                <!-- left column -->
-                <div class="col-md-6">
-                    <!-- general form elements -->
-                    <div class="card card-primary">
+@{
+    ViewBag.Title = "Edit_Countries";
+    Layout = null;
+}
 
-                        <!-- form start -->
-                        <form>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Title<sup class="text-red h6">*</sup></label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Afghanistan">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Shortcode<sup class="text-red h6">*</sup></label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="AF">
-                                </div>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Countries</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @using (Ajax.BeginForm("Edit_Countries", "Location_Master", new AjaxOptions() { HttpMethod = "POST", OnSuccess = "EditCountrySuccess", OnFailure = "EditCountryFailure" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-horizontal" id="txtfiled">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ID)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <sup class="text-red h6">*</sup>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", @placeholder = "Pakistan" } })
+                                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                             </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ShortCode, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <sup class="text-red h6">*</sup>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ShortCode, new { htmlAttributes = new { @class = "form-control", @placeholder = "Pk" } })
+                                @Html.ValidationMessageFor(model => model.ShortCode, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Update" class="btn btn-primary" />
+                            </div>
+                        </div>
                     </div>
-
-
-                    <!-- /.card-body -->
-
-                    <div class="float-right mr-4">
-                        <a type="submit" class="btn btn-primary mb-5" href="countries.html">Save</a>
-                    </div>
-                    </form>
-                </div>
-                <!-- /.card -->
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
-        <!-- /.row -->
-
-
-				</section><!-- /.container-fluid -->
-<!-- /.content -->
-<!-- /.content-wrapper -->
-			</div>
-
-<script>
-  $(function () {
-    // Summernote
-    $('#summernote').summernote()
-
-    // CodeMirror
-    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
-      mode: "htmlmixed",
-      theme: "monokai"
-    });
-  })
-
-</script>
+    </div>
+</div>

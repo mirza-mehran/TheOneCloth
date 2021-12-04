@@ -1,0 +1,43 @@
+﻿@model List<Countries>
+
+@{
+    Layout = null;
+    int num = 1;
+}
+
+<div id="">
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>S.no.</th>
+                <th>Shortcode</th>
+                <th>Title</th>
+                <th>Editors</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@num</td>
+                        <td>@item.ShortCode</td>
+                        <td>@item.Title</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" onclick="CountryEdit('@Url.Action("Edit_Countries","Location_Master",new { id=@item.ID })')"><i class="fa fa-pencil fa-lg"></i></a>
+                            <a class="btn btn-danger btn-sm" onclick="CountryDelete('@Url.Action("Delete_Countries","Location_Master",new { id=@item.ID })')"><i class="fa fa-trash fa-lg"></i></a>
+                        </td>
+                    </tr>
+                    num++;
+                }
+            }
+        </tbody>
+    </table>
+
+
+</div>
+
+
+

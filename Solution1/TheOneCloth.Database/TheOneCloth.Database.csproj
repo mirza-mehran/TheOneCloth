@@ -94,6 +94,10 @@
     <Compile Include="Migrations\202111291158029_InitializationDB.designer.cs">
       <DependentUpon>202111291158029_InitializationDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112020903478_AddCountries.cs" />
+    <Compile Include="Migrations\202112020903478_AddCountries.designer.cs">
+      <DependentUpon>202112020903478_AddCountries.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TOContext.cs" />
@@ -111,6 +115,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202111291158029_InitializationDB.resx">
       <DependentUpon>202111291158029_InitializationDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112020903478_AddCountries.resx">
+      <DependentUpon>202112020903478_AddCountries.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

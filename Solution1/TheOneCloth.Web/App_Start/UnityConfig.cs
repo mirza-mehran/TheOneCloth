@@ -19,6 +19,7 @@ namespace TheOneCloth.Web
           
             container.RegisterType<ICategoryServices, CategoryServices>();
             container.RegisterType<ISub_CategoryServices, Sub_CategoryServices>();
+            container.RegisterType<ICountry, Country>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
