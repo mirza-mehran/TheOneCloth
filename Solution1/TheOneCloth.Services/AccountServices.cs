@@ -29,17 +29,17 @@ namespace TheOneCloth.Services
 
         }
         #endregion
-        public Users Login(string UserName,string Password)
+        public async Task<Users> Login(string UserName,string Password)
         {
             Users user = new Users();
             using (TOContext db=new TOContext())
             {
-                user = db.Users.FirstOrDefault(x => x.UserName == UserName || x.Email == UserName  && x.Password == Password);
+                user = await db.Users.FirstOrDefaultAsync(x => x.UserName == UserName || x.Email == UserName  && x.Password == Password);
             }
             return user;
         }
 
-        public void Register(string name,string email,string password)
+        public async Task  Register(string name,string email,string password)
         {
             Users user = new Users();
             using (TOContext db=new TOContext())
@@ -49,7 +49,7 @@ namespace TheOneCloth.Services
                 user.Password = password;
                 user.Roles = "User";
                 db.Users.Add(user);
-                db.SaveChanges();
+               await db.SaveChangesAsync();
             }
             
         }

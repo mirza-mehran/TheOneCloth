@@ -18,6 +18,14 @@ namespace TheOneCloth.Web.Controllers
             return View();
         }
 
+        [AllowAnonymous]
+        [HandleError(View = "Error")]
+        public ActionResult errorpage()
+        {
+            int u = Convert.ToInt32("");
+            return View();
+        }
+
         [AuthorizeRole(Role.Administrator)]
         public ActionResult About()
         {

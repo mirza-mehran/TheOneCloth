@@ -77,7 +77,7 @@ namespace TheOneCloth.Web.Controllers
                 return Json(false);
             }
             
-            Users user = AccountServices.Instance.Login(model.UserName,model.Password);
+            Users user =await AccountServices.Instance.Login(model.UserName,model.Password);
             if (user != null)
             {
                 FormsAuthentication.SetAuthCookie(user.UserName,model.RememberMe);
@@ -162,7 +162,7 @@ namespace TheOneCloth.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                AccountServices.Instance.Register(model.UserName,model.Email,model.Password);
+                await AccountServices.Instance.Register(model.UserName,model.Email,model.Password);
                 ModelState.Clear();
                 return  RedirectToAction("Login");
             }

@@ -2,13 +2,12 @@
 @model IEnumerable<TheOneCloth.Entities.Categories>
 
 @{
-    ViewBag.Title = "ViewAll";
     Layout = null;
     int num = 1;
 
 }
 
-<div class="ApiGetViewAll">
+<div class="">
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -35,7 +34,7 @@
                                         <th>Editors</th>
                                     </tr>
                                 </thead>
-                                <tbody >
+                                <tbody>
                                     @foreach (var item in Model)
                                     {
                                         <tr>
@@ -43,7 +42,7 @@
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.Name)
                                             </td>
-                                      
+
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.Status)
                                             </td>
@@ -52,7 +51,7 @@
                                             </td>
                                             <td>
                                                 <div class="thumb">
-                                                    <img src="@Url.Content(item.ImageURL)"   alt="Category Img" class="img-size-64 img-circle mr-3" />
+                                                    <img src="@Url.Content(item.ImageURL)" alt="Category Img" class="img-size-64 img-circle mr-3" />
                                                 </div>
                                             </td>
                                             <td>
@@ -65,7 +64,7 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>

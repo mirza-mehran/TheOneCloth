@@ -18,6 +18,7 @@ namespace TheOneCloth.Web.Areas.Admin.Controllers
             _Sub_CategoryServices = Sub_CategoryServices;
         }
         
+       
         public ActionResult Index()
         {
             return View();
@@ -28,6 +29,7 @@ namespace TheOneCloth.Web.Areas.Admin.Controllers
             return View(_Sub_CategoryServices.GetAllCategory());
         }
 
+        [ChildActionOnly]
         [HttpGet]
         public ActionResult Add()
         {

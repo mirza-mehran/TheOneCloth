@@ -118,7 +118,6 @@ function refreshAddNewTab(resetUrl, showViewTab) {
 }
 
 function Edit(url) {
-    debugger;
     $.ajax({
         type: 'GET',
         url: url,

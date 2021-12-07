@@ -1,7 +1,8 @@
-﻿
+﻿@using TheOneCloth.Entities
 @{
     ViewBag.Title = "Index";
 }
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" id="hh">
     <!-- Content Header (Page header) -->
@@ -38,7 +39,6 @@
                                     <li class="nav-item">
                                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#secondTab" role="tab" aria-controls="profile" aria-selected="false">Add New</a>
                                     </li>
-                                 
                                 </ul>
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="firstTab" role="tabpanel" aria-labelledby="home-tab">@Html.Action("ViewAll")</div>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <!-- /.card-body -->
-                    </div>
+                    </div> 
                     <!-- /.card -->
                 </div>
                 <!-- /.col -->
@@ -66,13 +66,48 @@
 
 
 <script>
-        function activatejQueryTable() {
-            $("#categoryTable").DataTable();
-        }
+    function activatejQueryTable() {
+        $("#categoryTable").DataTable();
+    }
 
-        $(function () {
-            activatejQueryTable();
+    $(function () {
+        activatejQueryTable();
+    });
+
+    @*$(document).ready(function () {
+        productList();
+    });
+
+    function productList() {
+        // Call Web API to get a list of Product
+        $.ajax({
+            url: 'http://localhost:49562/api/categories',
+            type: 'GET',
+            dataType: 'json',
+            success: function (products) {
+                console.log(products);
+                productListSuccess(products);
+            },
+            error: function (request, message, error) {
+                handleException(request, message, error);
+            }
         });
+    }
+
+    function productListSuccess(products) {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("PassThings", "Main_Category")',
+            data: JSON.stringify(products),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                data = JSON.parse(data);
+                console.log(data);
+            }
+        });
+    }*@
 
 </script>
 }
